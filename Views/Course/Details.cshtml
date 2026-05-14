@@ -1,0 +1,37 @@
+﻿@model wateen12148MCVWebApp.Models.Course
+
+<div class="container mt-5">
+
+    <div class="card shadow p-4">
+        <h3 class="mb-4 text-primary fw-bold">Course Details</h3>
+
+        <!-- Course Name -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Course Name</label>
+            <div class="form-control bg-light">
+                @Model.courseName
+            </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Is Available</label>
+            <div class="form-control bg-light">
+                @(Model.isAvailable ? "Yes" : "No")
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div>
+            <a href="/Course/UpdateCourse/@Model.courseId" class="btn btn-primary me-2">
+                Edit
+            </a>
+
+            <a href="/Course/Index" class="btn btn-secondary">
+                Back
+            </a>
+        </div>
+
+    </div>
+
+</div>

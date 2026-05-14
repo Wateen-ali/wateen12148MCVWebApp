@@ -1,0 +1,66 @@
+﻿@model wateen12148MCVWebApp.Models.Room
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold">Room Details</h2>
+        <a href="/Room/Index" class="btn btn-secondary btn-lg">Back</a>
+    </div>
+
+    <!-- Card -->
+    <div class="card shadow rounded p-4">
+
+        <!-- Room Name -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Room Name</label>
+            <div class="form-control bg-light">
+                @Model.roomName
+            </div>
+        </div>
+
+        <!-- Room Size -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Room Size</label>
+            <div class="form-control bg-light">
+                @Model.roomSize
+            </div>
+        </div>
+
+        <!-- Availability -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Available</label>
+            <div>
+                @if (Model.isAvailable)
+                {
+                    <span class="badge bg-success">Yes</span>
+                }
+                else
+                {
+                    <span class="badge bg-danger">No</span>
+                }
+            </div>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Location</label>
+            <div class="form-control bg-light">
+                @Model.location
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div>
+            <a href="/Room/UpdateRoom/@Model.roomId" class="btn btn-primary btn-lg me-2">
+                Edit
+            </a>
+
+            <a href="/Room/Index" class="btn btn-secondary btn-lg">
+                Back
+            </a>
+        </div>
+
+    </div>
+
+</div>

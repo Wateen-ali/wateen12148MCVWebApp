@@ -1,0 +1,47 @@
+﻿<style >
+.custom-table {
+    font-size: 16px;
+}
+
+.custom-table th {
+    font-size: 18px;
+    padding: 12px;
+}
+
+.custom-table td {
+    padding: 12px;
+}
+
+.course-link {
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.badge {
+    font-size: 13px;
+    padding: 5px 8px;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+.custom-text {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.custom-badge {
+    font-size: 14px;
+    padding: 6px 10px;
+}
+.custom-table tbody td {
+    font-size: 16px; /* Make the content readable */
+    padding: 12px; /* Optional: add some spacing */
+}
+
+.custom-table thead th {
+    font-size: 18px; /* Slightly bigger for headers */
+}
+</style>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/MyDesign/MainDesign.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="container">
+        <ul id="menu">
+            <li>
+                <a href="/Home/Index">Home</a>
+
+            </li>
+            <li>
+                <a href="/Home/About">About</a>
+
+            </li>
+            <li>
+                <a href="/Teacher/Index">Teachers</a>
+                <ul>
+                    <li><a href="/Teacher/InsertTeacher">Add New Teacher</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="/Student/Index">Students</a>
+                <ul>
+                    <li><a href="/Student/InsertStudent">Add New Student</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="/Room/Index">Rooms</a>
+                <ul>
+                    <li><a href="/Room/InsertRoom">Add New Romm</a></li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="/Course/Index">Courses</a>
+                <ul>
+                    <li><a href="/Course/InsertCourse">Add New Course</a></li>
+
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - wateen12148MCVWebApp</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

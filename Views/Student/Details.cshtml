@@ -1,0 +1,43 @@
+﻿@model wateen12148MCVWebApp.Models.Student
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold">Student Details</h2>
+        <a href="/Student/Index" class="btn btn-secondary btn-lg">Back</a>
+    </div>
+
+    <!-- Card -->
+    <div class="card shadow rounded p-4">
+
+        <!-- Student Name -->
+        <div class="mb-3">
+            <label class="form-label fw-semibold">Student Name</label>
+            <div class="form-control bg-light">
+                @Model.studentName
+            </div>
+        </div>
+
+        <!-- Student Number -->
+        <div class="mb-4">
+            <label class="form-label fw-semibold">Student Number</label>
+            <div class="form-control bg-light">
+                @Model.studentNo
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div>
+            <a href="/Student/UpdateStudent/@Model.studentId" class="btn btn-primary btn-lg me-2">
+                Edit
+            </a>
+
+            <a href="/Student/Index" class="btn btn-secondary btn-lg">
+                Back
+            </a>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,40 @@
+﻿@model wateen12148MCVWebApp.Models.Course
+
+@using (Html.BeginForm("UpdateCourse", "Course", FormMethod.Post))
+{
+    <div class="container mt-5">
+
+        <div class="card shadow p-4">
+            <h3 class="mb-4 text-primary fw-bold">Update Course</h3>
+
+            @Html.HiddenFor(m => m.courseId)
+
+            <!-- Course Name -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Course Name</label>
+                @Html.TextBoxFor(m => m.courseName, new { @class = "form-control", placeholder = "Enter course name" })
+            </div>
+
+            <!-- Availability -->
+            <div class="mb-4">
+                <label class="form-label fw-semibold d-block">Is Available</label>
+
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(m => m.isAvailable, true, new { @class = "form-check-input", id = "yes" })
+                    <label class="form-check-label" for="yes">Yes</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(m => m.isAvailable, false, new { @class = "form-check-input", id = "no" })
+                    <label class="form-check-label" for="no">No</label>
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary btn-lg">
+                Update Course
+            </button>
+
+        </div>
+    </div>
+}

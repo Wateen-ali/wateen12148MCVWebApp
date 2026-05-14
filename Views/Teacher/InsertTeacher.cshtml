@@ -1,0 +1,34 @@
+﻿@using (Html.BeginForm("InsertTeacher", "Teacher", FormMethod.Post))
+{
+    <div class="container mt-5">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-primary fw-bold">Add Teacher</h2>
+            <a href="/Teacher/Index" class="btn btn-secondary btn-lg">Back</a>
+        </div>
+
+        <!-- Card -->
+        <div class="card shadow rounded p-4">
+
+            <!-- Teacher Name -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Teacher Name</label>
+                <input type="text" name="teacherName" class="form-control" placeholder="Enter teacher name" required />
+            </div>
+
+            <!-- Teacher Number -->
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Teacher Number</label>
+                <input type="text" name="teacherNo" class="form-control" placeholder="Enter teacher number" required />
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-success btn-lg">
+                + Add Teacher
+            </button>
+
+        </div>
+
+    </div>
+}

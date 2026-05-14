@@ -1,0 +1,54 @@
+﻿@model List<wateen12148MCVWebApp.Models.Student>
+<link href="~/Content/MyDesign/Courseindex.css" rel="stylesheet" />
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold">Students</h2>
+        <a href="/Student/InsertStudent" class="btn btn-success btn-lg">+ Add Student</a>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive shadow rounded">
+        <table class="table table-bordered table-hover align-middle text-center custom-table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Student Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.studentId</td>
+
+                        <td>
+                            <a href="/Student/GetDetails/@item.studentId" class="course-link">
+                                @item.studentName
+                            </a>
+                        </td>
+
+                        <td>@item.studentNo</td>
+
+                        <td>
+                            <a href="/Student/UpdateStudent/@item.studentId" class="btn btn-primary btn-sm me-2">
+                                Edit
+                            </a>
+
+                            <a href="/Student/DeleteStudent/@item.studentId"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,54 @@
+﻿@model List<wateen12148MCVWebApp.Models.Teacher>
+<link href="~/Content/MyDesign/Courseindex.css" rel="stylesheet" />
+
+<div class="container mt-5">
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary fw-bold">Teachers</h2>
+        <a href="/Teacher/InsertTeacher" class="btn btn-success btn-lg">+ Add Teacher</a>
+    </div>
+
+    <!-- Table -->
+    <div class="table-responsive shadow rounded">
+        <table class="table table-bordered table-hover align-middle text-center custom-table">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Teacher Name</th>
+                    <th>Teacher Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.teacherId</td>
+
+                        <td>
+                            <a href="/Teacher/GetDetails/@item.teacherId" class="course-link">
+                                @item.teacherName
+                            </a>
+                        </td>
+
+                        <td>@item.teacherNo</td>
+
+                        <td>
+                            <a href="/Teacher/UpdateTeacher/@item.teacherId" class="btn btn-primary btn-sm me-2">
+                                Edit
+                            </a>
+
+                            <a href="/Teacher/DeleteTeacher/@item.teacherId"
+                               class="btn btn-danger btn-sm"
+                               onclick="return confirm('Are you sure?');">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

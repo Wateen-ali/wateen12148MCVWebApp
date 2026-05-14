@@ -1,0 +1,57 @@
+﻿@model wateen12148MCVWebApp.Models.Room
+
+@using (Html.BeginForm("UpdateRoom", "Room", FormMethod.Post))
+{
+    <div class="container mt-5">
+
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="text-primary fw-bold">Update Room</h2>
+            <a href="/Room/Index" class="btn btn-secondary btn-lg">Back</a>
+        </div>
+
+        <!-- Card -->
+        <div class="card shadow rounded p-4">
+
+            @Html.HiddenFor(m => m.roomId)
+
+            <!-- Room Name -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Room Name</label>
+                @Html.TextBoxFor(m => m.roomName, new { @class = "form-control", placeholder = "Enter room name" })
+            </div>
+
+            <!-- Room Size -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Room Size</label>
+                @Html.TextBoxFor(m => m.roomSize, new { @class = "form-control", placeholder = "Enter room size" })
+            </div>
+
+            <!-- Availability -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold d-block">Is Available</label>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(m => m.isAvailable, true, new { @class = "form-check-input", id = "yes" })
+                    <label class="form-check-label" for="yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(m => m.isAvailable, false, new { @class = "form-check-input", id = "no" })
+                    <label class="form-check-label" for="no">No</label>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="mb-4">
+                <label class="form-label fw-semibold">Location</label>
+                @Html.TextBoxFor(m => m.location, new { @class = "form-control", placeholder = "Enter location" })
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary btn-lg">
+                Update Room
+            </button>
+
+        </div>
+
+    </div>
+}

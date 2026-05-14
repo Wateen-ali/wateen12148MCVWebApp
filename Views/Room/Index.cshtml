@@ -1,0 +1,46 @@
+﻿@model List<wateen12148MCVWebApp.Models.Room>
+<link href="~/Content/MyDesign/Courseindex.css" rel="stylesheet" />
+<!-- Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-primary fw-bold">Rooms</h2>
+    <a href="/Room/InsertRoom" class="btn btn-success btn-lg">+ Add Room</a>
+</div>
+<div class="table-responsive shadow rounded">
+    <table class="table table-bordered table-hover align-middle text-center custom-table">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Room Name</th>
+                <th>Room Size</th>
+                <th>Available</th>
+                <th>Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.roomId</td>
+                    <td>@item.roomName</td>
+                    <td>@item.roomSize</td>
+                    <td>
+                        @if (item.isAvailable)
+                        {
+                            <span class="badge bg-success">Yes</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">No</span>
+                        }
+                    </td>
+                    <td>@item.location</td>
+                    <td>
+                        <a href="/Room/UpdateRoom/@item.roomId" class="btn btn-primary btn-sm me-2">Edit</a>
+                        <a href="/Room/DeleteRoom/@item.roomId" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
